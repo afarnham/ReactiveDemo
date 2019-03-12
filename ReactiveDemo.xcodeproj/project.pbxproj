@@ -7,12 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		931943442228765400367A7F /* XMLElementFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931943432228765400367A7F /* XMLElementFinder.swift */; };
+		931943472228881E00367A7F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93194345222886FA00367A7F /* Style.swift */; };
+		93872221222DC1C5009EFC54 /* AppDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872220222DC1C5009EFC54 /* AppDriver.swift */; };
+		93CC87EF222D72840003A316 /* FlightComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC87EE222D72840003A316 /* FlightComputer.swift */; };
 		93D4000B2227195C0074BCF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4000A2227195C0074BCF3 /* AppDelegate.swift */; };
-		93D4000D2227195C0074BCF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4000C2227195C0074BCF3 /* ViewController.swift */; };
-		93D400102227195C0074BCF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D4000E2227195C0074BCF3 /* Main.storyboard */; };
 		93D400122227195D0074BCF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D400112227195D0074BCF3 /* Assets.xcassets */; };
 		93D400152227195D0074BCF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D400132227195D0074BCF3 /* LaunchScreen.storyboard */; };
 		93D400202227195D0074BCF3 /* ReactiveDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4001F2227195D0074BCF3 /* ReactiveDemoTests.swift */; };
+		93D40038222719870074BCF3 /* ReactiveDemoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D4002F222719860074BCF3 /* ReactiveDemoKit.framework */; };
+		93D4003F222719870074BCF3 /* ReactiveDemoKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4003E222719870074BCF3 /* ReactiveDemoKitTests.swift */; };
+		93D40041222719870074BCF3 /* ReactiveDemoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D40031222719860074BCF3 /* ReactiveDemoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93D40044222719870074BCF3 /* ReactiveDemoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D4002F222719860074BCF3 /* ReactiveDemoKit.framework */; };
+		93D40045222719870074BCF3 /* ReactiveDemoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93D4002F222719860074BCF3 /* ReactiveDemoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		93D4004E22271C640074BCF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4000C2227195C0074BCF3 /* ViewController.swift */; };
+		93D40055222720FA0074BCF3 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D40050222720FA0074BCF3 /* ReactiveSwift.framework */; };
+		93D40056222720FA0074BCF3 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D40051222720FA0074BCF3 /* ReactiveCocoa.framework */; };
+		93D40057222720FA0074BCF3 /* Tagged.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D40052222720FA0074BCF3 /* Tagged.framework */; };
+		93D40058222720FA0074BCF3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D40053222720FA0074BCF3 /* Result.framework */; };
+		93D40059222720FA0074BCF3 /* Overture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D40054222720FA0074BCF3 /* Overture.framework */; };
+		93D4005C222722970074BCF3 /* Overture.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93D40054222720FA0074BCF3 /* Overture.framework */; };
+		93D4005D222722970074BCF3 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93D40051222720FA0074BCF3 /* ReactiveCocoa.framework */; };
+		93D4005E222722970074BCF3 /* ReactiveSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93D40050222720FA0074BCF3 /* ReactiveSwift.framework */; };
+		93D4005F222722970074BCF3 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93D40053222720FA0074BCF3 /* Result.framework */; };
+		93D40060222722970074BCF3 /* Tagged.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93D40052222720FA0074BCF3 /* Tagged.framework */; };
+		93D400682227257B0074BCF3 /* ReactiveMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D400672227257B0074BCF3 /* ReactiveMapKit.framework */; };
+		93D40069222725870074BCF3 /* ReactiveMapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93D400672227257B0074BCF3 /* ReactiveMapKit.framework */; };
+		93D4006D222725F60074BCF3 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4006A222725D50074BCF3 /* Environment.swift */; };
+		93D4006F222726770074BCF3 /* AnyLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4006E222726770074BCF3 /* AnyLocationProvider.swift */; };
+		93D40071222726B60074BCF3 /* LocationProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D40070222726B60074BCF3 /* LocationProviding.swift */; };
+		93D40075222726E00074BCF3 /* MockLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D40074222726E00074BCF3 /* MockLocationProvider.swift */; };
+		93D400762227272F0074BCF3 /* CoreLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D40072222726CF0074BCF3 /* CoreLocationProvider.swift */; };
+		93D4007922273B880074BCF3 /* ForeFlightClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4007722273B850074BCF3 /* ForeFlightClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,19 +49,92 @@
 			remoteGlobalIDString = 93D400062227195C0074BCF3;
 			remoteInfo = ReactiveDemo;
 		};
+		93D40039222719870074BCF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93D4FFFF2227195C0074BCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93D4002E222719860074BCF3;
+			remoteInfo = ReactiveDemoKit;
+		};
+		93D4003B222719870074BCF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93D4FFFF2227195C0074BCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93D400062227195C0074BCF3;
+			remoteInfo = ReactiveDemo;
+		};
+		93D40042222719870074BCF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93D4FFFF2227195C0074BCF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93D4002E222719860074BCF3;
+			remoteInfo = ReactiveDemoKit;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		93D40049222719870074BCF3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				93D40045222719870074BCF3 /* ReactiveDemoKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93D4005B222722760074BCF3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				93D4005C222722970074BCF3 /* Overture.framework in CopyFiles */,
+				93D4005D222722970074BCF3 /* ReactiveCocoa.framework in CopyFiles */,
+				93D4005E222722970074BCF3 /* ReactiveSwift.framework in CopyFiles */,
+				93D40069222725870074BCF3 /* ReactiveMapKit.framework in CopyFiles */,
+				93D4005F222722970074BCF3 /* Result.framework in CopyFiles */,
+				93D40060222722970074BCF3 /* Tagged.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		931943432228765400367A7F /* XMLElementFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLElementFinder.swift; sourceTree = "<group>"; };
+		93194345222886FA00367A7F /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		93872220222DC1C5009EFC54 /* AppDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDriver.swift; sourceTree = "<group>"; };
+		93AB0C4C222ECA7B008B1D8E /* tracklog-2.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "tracklog-2.gpx"; sourceTree = "<group>"; };
+		93CC87EE222D72840003A316 /* FlightComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightComputer.swift; sourceTree = "<group>"; };
 		93D400072227195C0074BCF3 /* ReactiveDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D4000A2227195C0074BCF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93D4000C2227195C0074BCF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		93D4000F2227195C0074BCF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93D400112227195D0074BCF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93D400142227195D0074BCF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93D400162227195D0074BCF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93D4001B2227195D0074BCF3 /* ReactiveDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D4001F2227195D0074BCF3 /* ReactiveDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveDemoTests.swift; sourceTree = "<group>"; };
 		93D400212227195D0074BCF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93D4002F222719860074BCF3 /* ReactiveDemoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveDemoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93D40031222719860074BCF3 /* ReactiveDemoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveDemoKit.h; sourceTree = "<group>"; };
+		93D40032222719860074BCF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93D40037222719870074BCF3 /* ReactiveDemoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveDemoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93D4003E222719870074BCF3 /* ReactiveDemoKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveDemoKitTests.swift; sourceTree = "<group>"; };
+		93D40040222719870074BCF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93D40050222720FA0074BCF3 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		93D40051222720FA0074BCF3 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		93D40052222720FA0074BCF3 /* Tagged.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tagged.framework; path = Carthage/Build/iOS/Tagged.framework; sourceTree = "<group>"; };
+		93D40053222720FA0074BCF3 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		93D40054222720FA0074BCF3 /* Overture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Overture.framework; path = Carthage/Build/iOS/Overture.framework; sourceTree = "<group>"; };
+		93D4005A2227213B0074BCF3 /* ReactiveDemo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ReactiveDemo.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		93D400672227257B0074BCF3 /* ReactiveMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMapKit.framework; path = Carthage/Build/iOS/ReactiveMapKit.framework; sourceTree = "<group>"; };
+		93D4006A222725D50074BCF3 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		93D4006E222726770074BCF3 /* AnyLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyLocationProvider.swift; sourceTree = "<group>"; };
+		93D40070222726B60074BCF3 /* LocationProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProviding.swift; sourceTree = "<group>"; };
+		93D40072222726CF0074BCF3 /* CoreLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationProvider.swift; sourceTree = "<group>"; };
+		93D40074222726E00074BCF3 /* MockLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationProvider.swift; sourceTree = "<group>"; };
+		93D4007722273B850074BCF3 /* ForeFlightClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeFlightClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D40044222719870074BCF3 /* ReactiveDemoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +150,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93D4002C222719860074BCF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93D400682227257B0074BCF3 /* ReactiveMapKit.framework in Frameworks */,
+				93D40055222720FA0074BCF3 /* ReactiveSwift.framework in Frameworks */,
+				93D40056222720FA0074BCF3 /* ReactiveCocoa.framework in Frameworks */,
+				93D40057222720FA0074BCF3 /* Tagged.framework in Frameworks */,
+				93D40058222720FA0074BCF3 /* Result.framework in Frameworks */,
+				93D40059222720FA0074BCF3 /* Overture.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93D40034222719870074BCF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93D40038222719870074BCF3 /* ReactiveDemoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +182,8 @@
 			children = (
 				93D400072227195C0074BCF3 /* ReactiveDemo.app */,
 				93D4001B2227195D0074BCF3 /* ReactiveDemoTests.xctest */,
+				93D4002F222719860074BCF3 /* ReactiveDemoKit.framework */,
+				93D40037222719870074BCF3 /* ReactiveDemoKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,12 +191,12 @@
 		93D400092227195C0074BCF3 /* ReactiveDemo */ = {
 			isa = PBXGroup;
 			children = (
+				93D4006C222725E40074BCF3 /* Sources */,
 				93D4000A2227195C0074BCF3 /* AppDelegate.swift */,
-				93D4000C2227195C0074BCF3 /* ViewController.swift */,
-				93D4000E2227195C0074BCF3 /* Main.storyboard */,
 				93D400112227195D0074BCF3 /* Assets.xcassets */,
 				93D400132227195D0074BCF3 /* LaunchScreen.storyboard */,
 				93D400162227195D0074BCF3 /* Info.plist */,
+				93AB0C4C222ECA7B008B1D8E /* tracklog-2.gpx */,
 			);
 			path = ReactiveDemo;
 			sourceTree = "<group>";
@@ -87,16 +210,80 @@
 			path = ReactiveDemoTests;
 			sourceTree = "<group>";
 		};
+		93D40030222719860074BCF3 /* ReactiveDemoKit */ = {
+			isa = PBXGroup;
+			children = (
+				93D40031222719860074BCF3 /* ReactiveDemoKit.h */,
+				93D40032222719860074BCF3 /* Info.plist */,
+			);
+			path = ReactiveDemoKit;
+			sourceTree = "<group>";
+		};
+		93D4003D222719870074BCF3 /* ReactiveDemoKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				93D4003E222719870074BCF3 /* ReactiveDemoKitTests.swift */,
+				93D40040222719870074BCF3 /* Info.plist */,
+			);
+			path = ReactiveDemoKitTests;
+			sourceTree = "<group>";
+		};
+		93D4004F222720F90074BCF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93D400672227257B0074BCF3 /* ReactiveMapKit.framework */,
+				93D40054222720FA0074BCF3 /* Overture.framework */,
+				93D40051222720FA0074BCF3 /* ReactiveCocoa.framework */,
+				93D40050222720FA0074BCF3 /* ReactiveSwift.framework */,
+				93D40053222720FA0074BCF3 /* Result.framework */,
+				93D40052222720FA0074BCF3 /* Tagged.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93D4006C222725E40074BCF3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				93872220222DC1C5009EFC54 /* AppDriver.swift */,
+				93D4006A222725D50074BCF3 /* Environment.swift */,
+				93D4007722273B850074BCF3 /* ForeFlightClient.swift */,
+				93CC87EE222D72840003A316 /* FlightComputer.swift */,
+				93D4000C2227195C0074BCF3 /* ViewController.swift */,
+				93D4006E222726770074BCF3 /* AnyLocationProvider.swift */,
+				93D40070222726B60074BCF3 /* LocationProviding.swift */,
+				93D40072222726CF0074BCF3 /* CoreLocationProvider.swift */,
+				93D40074222726E00074BCF3 /* MockLocationProvider.swift */,
+				931943432228765400367A7F /* XMLElementFinder.swift */,
+				93194345222886FA00367A7F /* Style.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		93D4FFFE2227195C0074BCF3 = {
 			isa = PBXGroup;
 			children = (
+				93D4005A2227213B0074BCF3 /* ReactiveDemo.playground */,
 				93D400092227195C0074BCF3 /* ReactiveDemo */,
 				93D4001E2227195D0074BCF3 /* ReactiveDemoTests */,
+				93D40030222719860074BCF3 /* ReactiveDemoKit */,
+				93D4003D222719870074BCF3 /* ReactiveDemoKitTests */,
 				93D400082227195C0074BCF3 /* Products */,
+				93D4004F222720F90074BCF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		93D4002A222719860074BCF3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93D40041222719870074BCF3 /* ReactiveDemoKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		93D400062227195C0074BCF3 /* ReactiveDemo */ = {
@@ -106,10 +293,13 @@
 				93D400032227195C0074BCF3 /* Sources */,
 				93D400042227195C0074BCF3 /* Frameworks */,
 				93D400052227195C0074BCF3 /* Resources */,
+				93D40049222719870074BCF3 /* Embed Frameworks */,
+				93D4004D222719DC0074BCF3 /* Carthage Copy Run Script */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				93D40043222719870074BCF3 /* PBXTargetDependency */,
 			);
 			name = ReactiveDemo;
 			productName = ReactiveDemo;
@@ -134,6 +324,44 @@
 			productReference = 93D4001B2227195D0074BCF3 /* ReactiveDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		93D4002E222719860074BCF3 /* ReactiveDemoKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93D40046222719870074BCF3 /* Build configuration list for PBXNativeTarget "ReactiveDemoKit" */;
+			buildPhases = (
+				93D4002A222719860074BCF3 /* Headers */,
+				93D4002B222719860074BCF3 /* Sources */,
+				93D4002C222719860074BCF3 /* Frameworks */,
+				93D4002D222719860074BCF3 /* Resources */,
+				93D4005B222722760074BCF3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactiveDemoKit;
+			productName = ReactiveDemoKit;
+			productReference = 93D4002F222719860074BCF3 /* ReactiveDemoKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		93D40036222719870074BCF3 /* ReactiveDemoKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93D4004A222719870074BCF3 /* Build configuration list for PBXNativeTarget "ReactiveDemoKitTests" */;
+			buildPhases = (
+				93D40033222719870074BCF3 /* Sources */,
+				93D40034222719870074BCF3 /* Frameworks */,
+				93D40035222719870074BCF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93D4003A222719870074BCF3 /* PBXTargetDependency */,
+				93D4003C222719870074BCF3 /* PBXTargetDependency */,
+			);
+			name = ReactiveDemoKitTests;
+			productName = ReactiveDemoKitTests;
+			productReference = 93D40037222719870074BCF3 /* ReactiveDemoKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,6 +376,13 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					93D4001A2227195D0074BCF3 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 93D400062227195C0074BCF3;
+					};
+					93D4002E222719860074BCF3 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					93D40036222719870074BCF3 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 93D400062227195C0074BCF3;
 					};
@@ -168,6 +403,8 @@
 			targets = (
 				93D400062227195C0074BCF3 /* ReactiveDemo */,
 				93D4001A2227195D0074BCF3 /* ReactiveDemoTests */,
+				93D4002E222719860074BCF3 /* ReactiveDemoKit */,
+				93D40036222719870074BCF3 /* ReactiveDemoKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -179,7 +416,6 @@
 			files = (
 				93D400152227195D0074BCF3 /* LaunchScreen.storyboard in Resources */,
 				93D400122227195D0074BCF3 /* Assets.xcassets in Resources */,
-				93D400102227195C0074BCF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,14 +426,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		93D4002D222719860074BCF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93D40035222719870074BCF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93D4004D222719DC0074BCF3 /* Carthage Copy Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Overture.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Tagged.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMapKit.framework",
+			);
+			name = "Carthage Copy Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Overture.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Tagged.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveMapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		93D400032227195C0074BCF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93D4000D2227195C0074BCF3 /* ViewController.swift in Sources */,
 				93D4000B2227195C0074BCF3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +492,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		93D4002B222719860074BCF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93D40075222726E00074BCF3 /* MockLocationProvider.swift in Sources */,
+				93D4006F222726770074BCF3 /* AnyLocationProvider.swift in Sources */,
+				93CC87EF222D72840003A316 /* FlightComputer.swift in Sources */,
+				93D400762227272F0074BCF3 /* CoreLocationProvider.swift in Sources */,
+				93D40071222726B60074BCF3 /* LocationProviding.swift in Sources */,
+				931943442228765400367A7F /* XMLElementFinder.swift in Sources */,
+				93D4004E22271C640074BCF3 /* ViewController.swift in Sources */,
+				93D4006D222725F60074BCF3 /* Environment.swift in Sources */,
+				931943472228881E00367A7F /* Style.swift in Sources */,
+				93872221222DC1C5009EFC54 /* AppDriver.swift in Sources */,
+				93D4007922273B880074BCF3 /* ForeFlightClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93D40033222719870074BCF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93D4003F222719870074BCF3 /* ReactiveDemoKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -218,17 +526,24 @@
 			target = 93D400062227195C0074BCF3 /* ReactiveDemo */;
 			targetProxy = 93D4001C2227195D0074BCF3 /* PBXContainerItemProxy */;
 		};
+		93D4003A222719870074BCF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93D4002E222719860074BCF3 /* ReactiveDemoKit */;
+			targetProxy = 93D40039222719870074BCF3 /* PBXContainerItemProxy */;
+		};
+		93D4003C222719870074BCF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93D400062227195C0074BCF3 /* ReactiveDemo */;
+			targetProxy = 93D4003B222719870074BCF3 /* PBXContainerItemProxy */;
+		};
+		93D40043222719870074BCF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93D4002E222719860074BCF3 /* ReactiveDemoKit */;
+			targetProxy = 93D40042222719870074BCF3 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		93D4000E2227195C0074BCF3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				93D4000F2227195C0074BCF3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		93D400132227195D0074BCF3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -359,6 +674,7 @@
 		93D400252227195D0074BCF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WE374FT5S8;
@@ -377,6 +693,7 @@
 		93D400262227195D0074BCF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WE374FT5S8;
@@ -434,6 +751,110 @@
 			};
 			name = Release;
 		};
+		93D40047222719870074BCF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WE374FT5S8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ReactiveDemoKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.foreflight.ReactiveDemoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		93D40048222719870074BCF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WE374FT5S8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ReactiveDemoKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.foreflight.ReactiveDemoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		93D4004B222719870074BCF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WE374FT5S8;
+				INFOPLIST_FILE = ReactiveDemoKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.foreflight.ReactiveDemoKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactiveDemo.app/ReactiveDemo";
+			};
+			name = Debug;
+		};
+		93D4004C222719870074BCF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WE374FT5S8;
+				INFOPLIST_FILE = ReactiveDemoKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.foreflight.ReactiveDemoKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactiveDemo.app/ReactiveDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -460,6 +881,24 @@
 			buildConfigurations = (
 				93D400282227195D0074BCF3 /* Debug */,
 				93D400292227195D0074BCF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93D40046222719870074BCF3 /* Build configuration list for PBXNativeTarget "ReactiveDemoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93D40047222719870074BCF3 /* Debug */,
+				93D40048222719870074BCF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93D4004A222719870074BCF3 /* Build configuration list for PBXNativeTarget "ReactiveDemoKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93D4004B222719870074BCF3 /* Debug */,
+				93D4004C222719870074BCF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
