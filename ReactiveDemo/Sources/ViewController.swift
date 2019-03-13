@@ -27,74 +27,6 @@ class AirplaneAnnotationView: MKAnnotationView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    func update(coordinate: CLLocationCoordinate2D) {
-//        guard let lastC = lastCoord else {
-//            lastCoord = coordinate
-//            return
-//        }
-//        
-//        let lat1InRad = lastC.latitude * Double.pi/180
-//        let lat2InRad = coordinate.latitude * Double.pi/180
-//        //let fromLon = lastC.longitude * Double.pi/180
-//
-//        let longitudeDifferenceInRad = (coordinate.longitude - lastC.longitude) * Double.pi/180
-//        
-//        let y = sin(longitudeDifferenceInRad) * cos(lat2InRad);
-//        let x = cos(lat1InRad) * sin(lat2InRad) -
-//            sin(lat1InRad) * cos(lat2InRad) * cos(longitudeDifferenceInRad)
-//        
-//        var bearing = atan2(y, x)
-//        
-//        bearing = bearing + 2 * Double.pi;
-//        if bearing > (2 * Double.pi) {
-//            bearing -= (2 * Double.pi)
-//        }
-//        self.transform = CGAffineTransform(rotationAngle: CGFloat(bearing))
-//        
-//        lastCoord = coordinate
-//    }
-}
-
-private let UNKNOWN_TEXT = "Unknown"
-func viewModel(
-    viewDidLoad: Signal<Void, NoError>,
-    flightComputerUpdated: Signal<Void, NoError>,
-    refreshButtonPressed: Signal<Void, NoError>
-) -> (
-    nearestAirportText: Signal<String, NoError>,
-    metarText: Signal<String, NoError>,
-    coordinate: Signal<CLLocation, NoError>
-) {
-  
-    let initialAirportText = viewDidLoad.map{ UNKNOWN_TEXT }
-    let initialMetarText = viewDidLoad.map { UNKNOWN_TEXT }
-    
-    let nearestAirport = flightComputerUpdated
-        .flatMap(.latest) {
-            .init(value: Current.flightComputer.nearestAirport)
-        }.merge(with:
-            refreshButtonPressed
-                .flatMap(.latest) { _ in
-                    Current.flightComputer.currentLocation.map {
-                        Current.flightComputerService.refreshNearestAirport($0).map { a in Optional(a) }
-                        } ?? .init(value: nil)
-                }
-                .flatMapError { _ in .empty }
-        )
-    
-    let locText = initialAirportText.merge(with:
-        nearestAirport.map { $0?.name ?? UNKNOWN_TEXT }
-    )
-    
-    let wxText = initialMetarText
-        .merge(with:
-            nearestAirport.map { $0?.metar ?? UNKNOWN_TEXT }
-        )
-    
-    let location = Current.location.signal()
-
-    return (locText, wxText, location)
 }
 
 public class ViewController: UIViewController, MKMapViewDelegate {
@@ -185,9 +117,6 @@ public class ViewController: UIViewController, MKMapViewDelegate {
             DispatchQueue.main.async {
                 self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
                 self.airplaneAnnotation.coordinate = location.coordinate
-//                if let anView = self.mapView.view(for: self.airplaneAnnotation) as? AirplaneAnnotationView {
-//                    anView.update(coordinate: location.coordinate)
-//                }
             }
             
         })

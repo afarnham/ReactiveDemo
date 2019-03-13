@@ -11,6 +11,7 @@
 		931943472228881E00367A7F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93194345222886FA00367A7F /* Style.swift */; };
 		936D007C22384A1400233830 /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936D007A2238496A00233830 /* SnapshotTesting.framework */; };
 		936D007E22384A5B00233830 /* SnapshotTesting.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 936D007A2238496A00233830 /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		936D0087223983F400233830 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936D0085223983C400233830 /* ViewModel.swift */; };
 		93872221222DC1C5009EFC54 /* AppDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872220222DC1C5009EFC54 /* AppDriver.swift */; };
 		93CC87EF222D72840003A316 /* FlightComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC87EE222D72840003A316 /* FlightComputer.swift */; };
 		93D4000B2227195C0074BCF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4000A2227195C0074BCF3 /* AppDelegate.swift */; };
@@ -117,6 +118,7 @@
 		931943432228765400367A7F /* XMLElementFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLElementFinder.swift; sourceTree = "<group>"; };
 		93194345222886FA00367A7F /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		936D007A2238496A00233830 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
+		936D0085223983C400233830 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		93872220222DC1C5009EFC54 /* AppDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDriver.swift; sourceTree = "<group>"; };
 		93AB0C4C222ECA7B008B1D8E /* tracklog-2.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "tracklog-2.gpx"; sourceTree = "<group>"; };
 		93CC87EE222D72840003A316 /* FlightComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightComputer.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				93D4007722273B850074BCF3 /* ForeFlightClient.swift */,
 				93CC87EE222D72840003A316 /* FlightComputer.swift */,
 				93D4000C2227195C0074BCF3 /* ViewController.swift */,
+				936D0085223983C400233830 /* ViewModel.swift */,
 				93D4006E222726770074BCF3 /* AnyLocationProvider.swift */,
 				93D40070222726B60074BCF3 /* LocationProviding.swift */,
 				93D40072222726CF0074BCF3 /* CoreLocationProvider.swift */,
@@ -522,6 +525,7 @@
 				93D4006D222725F60074BCF3 /* Environment.swift in Sources */,
 				931943472228881E00367A7F /* Style.swift in Sources */,
 				93872221222DC1C5009EFC54 /* AppDriver.swift in Sources */,
+				936D0087223983F400233830 /* ViewModel.swift in Sources */,
 				93D4007922273B880074BCF3 /* ForeFlightClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
