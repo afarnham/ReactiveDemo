@@ -14,6 +14,48 @@ import Result
 import Overture
 import MapKit
 
+class AirplaneAnnotationView: MKAnnotationView {
+    static let reuseId = "marker-airplane"
+    private var lastCoord: CLLocationCoordinate2D? = nil
+    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        self.image = UIImage(named: "marker-airplane")
+        self.isEnabled = false
+        self.canShowCallout = false
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+//    func update(coordinate: CLLocationCoordinate2D) {
+//        guard let lastC = lastCoord else {
+//            lastCoord = coordinate
+//            return
+//        }
+//        
+//        let lat1InRad = lastC.latitude * Double.pi/180
+//        let lat2InRad = coordinate.latitude * Double.pi/180
+//        //let fromLon = lastC.longitude * Double.pi/180
+//
+//        let longitudeDifferenceInRad = (coordinate.longitude - lastC.longitude) * Double.pi/180
+//        
+//        let y = sin(longitudeDifferenceInRad) * cos(lat2InRad);
+//        let x = cos(lat1InRad) * sin(lat2InRad) -
+//            sin(lat1InRad) * cos(lat2InRad) * cos(longitudeDifferenceInRad)
+//        
+//        var bearing = atan2(y, x)
+//        
+//        bearing = bearing + 2 * Double.pi;
+//        if bearing > (2 * Double.pi) {
+//            bearing -= (2 * Double.pi)
+//        }
+//        self.transform = CGAffineTransform(rotationAngle: CGFloat(bearing))
+//        
+//        lastCoord = coordinate
+//    }
+}
+
 private let UNKNOWN_TEXT = "Unknown"
 func viewModel(
     viewDidLoad: Signal<Void, NoError>,
@@ -21,7 +63,8 @@ func viewModel(
     refreshButtonPressed: Signal<Void, NoError>
 ) -> (
     nearestAirportText: Signal<String, NoError>,
-    metarText: Signal<String, NoError>
+    metarText: Signal<String, NoError>,
+    coordinate: Signal<CLLocation, NoError>
 ) {
   
     let initialAirportText = viewDidLoad.map{ UNKNOWN_TEXT }
@@ -48,8 +91,10 @@ func viewModel(
         .merge(with:
             nearestAirport.map { $0?.metar ?? UNKNOWN_TEXT }
         )
+    
+    let location = Current.location.signal()
 
-    return (locText, wxText)
+    return (locText, wxText, location)
 }
 
 public class ViewController: UIViewController, MKMapViewDelegate {
@@ -65,6 +110,12 @@ public class ViewController: UIViewController, MKMapViewDelegate {
     
     let mapView: MKMapView = with(MKMapView(frame: .zero),
                                   autoLayoutStyle)
+    
+    let airplaneAnnotation = MKPointAnnotation()
+    
+    var locationObserver: Disposable? = nil
+    
+    var mapViewFinishedRendering: Bool = false
     
     fileprivate let viewDidLoadProperty = MutableProperty(())
 
@@ -101,27 +152,45 @@ public class ViewController: UIViewController, MKMapViewDelegate {
     override public func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        mapView.showsUserLocation = true
+        //mapView.showsUserLocation = true
+        mapView.register(AirplaneAnnotationView.self,
+                         forAnnotationViewWithReuseIdentifier: AirplaneAnnotationView.reuseId)
+        mapView.addAnnotation(airplaneAnnotation)
         
         refreshButton.setTitle("Refresh", for: .normal)
         
         bindViewModel()
-        viewDidLoadProperty.value = ()
+        viewDidLoadProperty.value = () //Signal to the view model that the view did load. This property is bound to the viewModel viewDidLoad: input in the bindViewModel() method
+    }
+    
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let anView = mapView.dequeueReusableAnnotationView(withIdentifier: AirplaneAnnotationView.reuseId)
+        return anView
+    }
+    
+    public func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+        mapViewFinishedRendering = fullyRendered
     }
     
     func bindViewModel() {
-        let (nearest, metar) = viewModel(
+        let (nearest, metar, location) = viewModel(
             viewDidLoad: viewDidLoadProperty.signal,
             flightComputerUpdated: Current.flightComputerService.flightComputerUpdatedSignal,
             refreshButtonPressed: refreshButton.reactive.controlEvents(.touchUpInside).map(value: ()))
         
         metarLabel.reactive.text <~ metar
         airportLabel.reactive.text <~ nearest
-    }
-
-    public func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        let region = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
-        mapView.setRegion(mapView.regionThatFits(region), animated: true)
+        locationObserver = location.observeValues({ (location) in
+            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
+            DispatchQueue.main.async {
+                self.mapView.setRegion(self.mapView.regionThatFits(region), animated: true)
+                self.airplaneAnnotation.coordinate = location.coordinate
+//                if let anView = self.mapView.view(for: self.airplaneAnnotation) as? AirplaneAnnotationView {
+//                    anView.update(coordinate: location.coordinate)
+//                }
+            }
+            
+        })
     }
 }
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		931943442228765400367A7F /* XMLElementFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931943432228765400367A7F /* XMLElementFinder.swift */; };
 		931943472228881E00367A7F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93194345222886FA00367A7F /* Style.swift */; };
+		936D007C22384A1400233830 /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936D007A2238496A00233830 /* SnapshotTesting.framework */; };
+		936D007E22384A5B00233830 /* SnapshotTesting.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 936D007A2238496A00233830 /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		93872221222DC1C5009EFC54 /* AppDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872220222DC1C5009EFC54 /* AppDriver.swift */; };
 		93CC87EF222D72840003A316 /* FlightComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC87EE222D72840003A316 /* FlightComputer.swift */; };
 		93D4000B2227195C0074BCF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4000A2227195C0074BCF3 /* AppDelegate.swift */; };
@@ -73,6 +75,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		936D007D22384A4200233830 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				936D007E22384A5B00233830 /* SnapshotTesting.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		93D40049222719870074BCF3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,6 +116,7 @@
 /* Begin PBXFileReference section */
 		931943432228765400367A7F /* XMLElementFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLElementFinder.swift; sourceTree = "<group>"; };
 		93194345222886FA00367A7F /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		936D007A2238496A00233830 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
 		93872220222DC1C5009EFC54 /* AppDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDriver.swift; sourceTree = "<group>"; };
 		93AB0C4C222ECA7B008B1D8E /* tracklog-2.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "tracklog-2.gpx"; sourceTree = "<group>"; };
 		93CC87EE222D72840003A316 /* FlightComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightComputer.swift; sourceTree = "<group>"; };
@@ -171,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93D40038222719870074BCF3 /* ReactiveDemoKit.framework in Frameworks */,
+				936D007C22384A1400233830 /* SnapshotTesting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +245,7 @@
 		93D4004F222720F90074BCF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				936D007A2238496A00233830 /* SnapshotTesting.framework */,
 				93D400672227257B0074BCF3 /* ReactiveMapKit.framework */,
 				93D40054222720FA0074BCF3 /* Overture.framework */,
 				93D40051222720FA0074BCF3 /* ReactiveCocoa.framework */,
@@ -350,6 +365,7 @@
 				93D40033222719870074BCF3 /* Sources */,
 				93D40034222719870074BCF3 /* Frameworks */,
 				93D40035222719870074BCF3 /* Resources */,
+				936D007D22384A4200233830 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -716,6 +732,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WE374FT5S8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -737,6 +757,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WE374FT5S8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -821,6 +845,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WE374FT5S8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveDemoKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -841,6 +869,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WE374FT5S8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveDemoKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

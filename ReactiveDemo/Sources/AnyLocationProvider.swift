@@ -39,4 +39,9 @@ public struct AnyLocationProvider {
         let provider = MockLocationProvider.oneMeterPerSecondLocationProvider(initial: CLLocationCoordinate2DMake(29, -95))
         return create(LocationProviding.mockLocationProvider, provider: provider)
     }
+    
+    public static func mockAlwaysLocationProvider(coordinate: CLLocationCoordinate2D) -> AnyLocationProvider {
+        let provider = MockLocationProvider.alwaysLocationProvider(initial: coordinate)
+        return create(LocationProviding.mockLocationProvider, provider: provider)
+    }
 }

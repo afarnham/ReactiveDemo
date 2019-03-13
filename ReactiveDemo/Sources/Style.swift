@@ -2,7 +2,7 @@
 //  Style.swift
 //  ReactiveDemo
 //
-//  Created by Raymond Farnham on 3/3/19.
+//  Created by Raymond Farnham on 2/28/19.
 //  Copyright © 2019 ForeFlight. All rights reserved.
 //
 
@@ -37,6 +37,7 @@ let baseLabelStyle = concat(autoLayoutStyle,
 let metarLabelStyle = concat(baseLabelStyle,
                              mut(\UILabel.lineBreakMode, .byWordWrapping),
                              mut(\UILabel.numberOfLines, 0))
+                             //mut(\UILabel.font, UIFont.systemFont(ofSize: 32)))
 
 let airportLabelStyle = baseLabelStyle
 

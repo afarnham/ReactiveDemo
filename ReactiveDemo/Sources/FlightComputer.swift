@@ -36,6 +36,9 @@ extension FlightComputer.Airport {
     }
 }
 
+extension FlightComputer {
+}
+
 func shouldUpdateNearestAirport(flightComputer: FlightComputer, location: CLLocation) -> Bool {
     let recentlyUpdated = flightComputer.nearestAirportUpdated.map {
         return location.timestamp.timeIntervalSince1970 - $0.timeIntervalSince1970 > 60
@@ -97,4 +100,10 @@ public class FlightComputerService {
                 self.refreshNearestDisposable = nil
         }
     }
+    
+    #if targetEnvironment(simulator)
+    public func forceUpdate() {
+        sink.send(value: ())
+    }
+    #endif
 }

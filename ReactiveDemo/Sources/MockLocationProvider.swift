@@ -23,6 +23,10 @@ public class MockLocationProvider {
         return MockLocationProvider(locationGenerator: generate1mpsLocations(initial: initial))
     }
     
+    public static func alwaysLocationProvider(initial: CLLocationCoordinate2D) -> MockLocationProvider {
+        return MockLocationProvider(locationGenerator: alwaysLocation(coordinate: initial))
+    }
+
     private init(locationGenerator: @escaping () -> CLLocation) {
         generator = locationGenerator
     }
@@ -51,6 +55,12 @@ public class MockLocationProvider {
     
     func last() -> CLLocation? {
         return lastLocation
+    }
+}
+
+func alwaysLocation(coordinate: CLLocationCoordinate2D) -> () -> CLLocation {
+    return {
+        CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
 }
 
