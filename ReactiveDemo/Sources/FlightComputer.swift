@@ -29,6 +29,12 @@ public struct FlightComputer {
 }
 
 extension FlightComputer.Airport {
+    public init(_ name: String, _ coordinate: CLLocationCoordinate2D, _ metar: String) {
+        self.name = name
+        self.coordinate = coordinate
+        self.metar = metar
+    }
+    
     public init(_ name: String, _ latitude: Double, _ longitude: Double, _ metar: String) {
         self.name = name
         self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)

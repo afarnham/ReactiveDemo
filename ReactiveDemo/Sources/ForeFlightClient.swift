@@ -22,8 +22,8 @@ public enum APIError: Error {
 }
 
 public struct ForeFlightClient {
-    let fetchMetar: (String) -> SignalProducer<String, APIError>
-    let fetchNearestAirport: (CLLocationCoordinate2D) -> SignalProducer<FlightComputer.Airport, APIError>
+    public let fetchMetar: (String) -> SignalProducer<String, APIError>
+    public let fetchNearestAirport: (CLLocationCoordinate2D) -> SignalProducer<FlightComputer.Airport, APIError>
     
     public init(fetchMetar: @escaping (String) -> SignalProducer<String, APIError>,
                 fetchNearestAirport: @escaping (CLLocationCoordinate2D) -> SignalProducer<FlightComputer.Airport, APIError>)
@@ -110,7 +110,7 @@ private func dataTask(_ url: URL, _ callback: @escaping (Result<Data, APIError>)
 
 private func metar(for airport: String, callback: @escaping (Result<String, APIError>) -> Void) {
     let url = URL(string: "https://api.foreflight.com/weather/report/\(airport)")!
-    dump(url)
+    //dump(url)
     dataTask(url) { dataResult in
         switch dataResult {
         case let .success(data):
@@ -138,7 +138,7 @@ private func metar(for airport: String, callback: @escaping (Result<String, APIE
 
 private func nearestAirport(_ coord: CLLocationCoordinate2D, callback: @escaping (Result<FlightComputer.Airport, APIError>) -> Void) {
     let urlStr = "https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=stations&requestType=retrieve&format=xml&radialDistance=10;\(coord.longitude),\(coord.latitude)"
-    dump(urlStr)
+    //dump(urlStr)
     dataTask(URL(string: urlStr)!) { (dataResult) in
         switch dataResult {
         case let .success(data):
