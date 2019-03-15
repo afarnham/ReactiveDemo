@@ -36,8 +36,8 @@ let baseLabelStyle = concat(autoLayoutStyle,
 
 let metarLabelStyle = concat(baseLabelStyle,
                              mut(\UILabel.lineBreakMode, .byWordWrapping),
-                             mut(\UILabel.numberOfLines, 0))
-                             //mut(\UILabel.font, UIFont.systemFont(ofSize: 32)))
+                             mut(\UILabel.numberOfLines, 0),
+                             mut(\UILabel.font, UIFont.systemFont(ofSize: 32)))
 
 let airportLabelStyle = baseLabelStyle
 

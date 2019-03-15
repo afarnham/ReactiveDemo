@@ -19,7 +19,7 @@ func fireButton(_ count: Int = 0, updateInterval: Double = 1, numIterations: Int
 }
 
 //Get a signal for the button for standard iOS touch up inside events
-let buttonSignal = button.reactive.controlEvents(.touchUpInside)
+let buttonSignal: Signal<UIButton, NoError> = button.reactive.controlEvents(.touchUpInside)
 
 //PART 1 - Reactive Button signal
 
@@ -55,7 +55,7 @@ let buttonSignal = button.reactive.controlEvents(.touchUpInside)
 
 //PART 3 Merged Button & Location Signals
 
-////For now just think of Current as a means for providing geographic locations update events to our environment via a ReactiveSwift Signal
+//For now just think of Current as a means for providing geographic locations update events to our environment via a ReactiveSwift Signal
 //Current.location = AnyLocationProvider.mockEquidistantLocationProvider() //This location provider moves east on a latitude at 1 meter per second
 //
 //Current.location.start()
@@ -68,7 +68,7 @@ let buttonSignal = button.reactive.controlEvents(.touchUpInside)
 //let mergedSignal = buttonSignal
 //    .map { _ in kCLLocationCoordinate2DInvalid } //When the button fires, we return an invalid geo coord
 //    .merge(with: locSignal)
-//
+
 //let dispose = mergedSignal.observeValues { (coord) in
 //    print("-------------")
 //    if CLLocationCoordinate2DIsValid(coord) { //Valid coord, then it was the location provider that evented the value
@@ -93,10 +93,10 @@ let buttonSignal = button.reactive.controlEvents(.touchUpInside)
 
 //PART 5 - Functional transforms
 
-//Current.location = AnyLocationProvider.mockEquidistantLocationProvider()
-//Current.location.start()
-//
-////Map - 1 to 1 transformations
+Current.location = AnyLocationProvider.mockEquidistantLocationProvider()
+Current.location.start()
+
+//Map - 1 to 1 transformations
 //let latLonSig = Current.location.signal().map {
 //    return "MAPPED LOCATION: \($0.coordinate.latitude), \($0.coordinate.longitude)"
 //}
@@ -125,9 +125,9 @@ let buttonSignal = button.reactive.controlEvents(.touchUpInside)
 //    failed: { error in dump(error) }
 //)
 
-//Start our cold signal so it becomes a hot signal that can send events
+////Start our cold signal so it becomes a hot signal that can send events
 //let disposable = nearestAirportMetar.start(observeNearestAirportMetar)
-
+//
 //fireButton(updateInterval: 0, numIterations: 1)
 
 //Zip - Combine values contained in signals
@@ -178,7 +178,7 @@ let buttonSignal = button.reactive.controlEvents(.touchUpInside)
 //    }
 //}
 //
-//let name: String? = "KSGR"
+//let name: String? = nil//"KSGR"
 //let lat: Double? = 29.95
 //let lon: Double? = -95.8
 //let metar: String? = "KSGR 150153Z 35007KT 10SM SCT070 BKN250 18/06 A3007 RMK AO2 SLP181 T01830056"
@@ -199,6 +199,7 @@ let buttonSignal = button.reactive.controlEvents(.touchUpInside)
 //
 //print("ifLetAirport: \(ifLetAirport)")
 //print("\nzipAirport: \(zipAirport)")
+//
 
 //Zip functions can be written for Signals, Validation types, or even asynchronous operation types, like Parallel below.
 
@@ -211,52 +212,52 @@ let buttonSignal = button.reactive.controlEvents(.touchUpInside)
 //     //do some asynchronous work in this block and call the callback when done
 //}
 
-//struct DemoAirport {
-//    let name: String
-//    let coord: CLLocationCoordinate2D
-//    let metar: String
-//}
-//
-////Helper for printing output
-//func parallelStatusMessage(_ msg: String) {
-//    print("----------------")
-//    print(msg)
-//}
-//
-////Immediate async operation
-//let p1 = Parallel<String> { callback in
-//    DispatchQueue.global().async {
-//        parallelStatusMessage("FINISHED ICAO IDENT")
-//        callback("KSGR")
-//    }
-//}
-//
-////Immediate async operation
-//let p2 = Parallel<CLLocationCoordinate2D> { callback in
-//    DispatchQueue.global().async {
-//        parallelStatusMessage("FINISHED COORDINATE")
-//        callback(CLLocationCoordinate2DMake(29.95, -96))
-//    }
-//}
-//
-////5 second delay async operation
-//let p3 = Parallel<String> { callback in
-//    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//        DispatchQueue.global().async {
-//            parallelStatusMessage("FINISHED METAR")
-//            callback("METAR")
-//        }
-//    }
-//}
-//
+struct DemoAirport {
+    let name: String
+    let coord: CLLocationCoordinate2D
+    let metar: String
+}
+
+//Helper for printing output
+func parallelStatusMessage(_ msg: String) {
+    print("----------------")
+    print(msg)
+}
+
+//Immediate async operation
+let p1 = Parallel<String> { callback in
+    DispatchQueue.global().async {
+        parallelStatusMessage("FINISHED ICAO IDENT")
+        callback("KSGR")
+    }
+}
+
+//Immediate async operation
+let p2 = Parallel<CLLocationCoordinate2D> { callback in
+    DispatchQueue.global().async {
+        parallelStatusMessage("FINISHED COORDINATE")
+        callback(CLLocationCoordinate2DMake(29.95, -96))
+    }
+}
+
+//5 second delay async operation
+let p3 = Parallel<String> { callback in
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.global().async {
+            parallelStatusMessage("FINISHED METAR")
+            callback("METAR")
+        }
+    }
+}
+
 //let zipF = zip3(with: DemoAirport.init)
 //let p4 = zipF(p1, p2, p3)
 //p4.run { v in
 //    parallelStatusMessage("Final value from Parallel zip(with:)\n\n\(v)")
 //}
-//
-////zip3(with: FlightComputer.Airport.init)(p1, p2, p3).run { v in
-////    parallelStatusMessage("Final value from Parallel zip(with:)\n\n\(v)")
-////}
+
+zip3(with: DemoAirport.init)(p1, p2, p3).run { v in
+    parallelStatusMessage("Final value from Parallel zip(with:)\n\n\(v)")
+}
 
 PlaygroundPage.current.needsIndefiniteExecution = true

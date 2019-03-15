@@ -35,11 +35,13 @@ class ReactiveDemoKitTests: XCTestCase {
         let (viewDidLoadSignal, _) = Signal<Void, NoError>.pipe()
         let (flightComputerUpdatedSignal, fcuSink) = Signal<Void, NoError>.pipe()
         let (refreshButtonSignal, _) = Signal<Void, NoError>.pipe()
+        
         let (nearest, metar, coordinate) = viewModel(viewDidLoad: viewDidLoadSignal,
                                                      flightComputerUpdated: flightComputerUpdatedSignal,
                                                      refreshButtonPressed: refreshButtonSignal)
         
         nearest.observeValues { (nearest) in
+            print("Observed nearest")
             XCTAssertEqual(nearest, testName)
         }
         
@@ -52,11 +54,9 @@ class ReactiveDemoKitTests: XCTestCase {
             XCTAssertEqual(loc.coordinate.longitude, testLoc.coordinate.longitude)
         }
         
-        Current = with(Current,
-                       mut(\.flightComputer,
-                           FlightComputer(currentLocation: testLoc,
-                                          nearestAirportUpdated: testDate,
-                                          nearestAirport: testAirport)))
+        Current.flightComputer = FlightComputer(currentLocation: testLoc,
+                                                nearestAirportUpdated: testDate,
+                                                nearestAirport: testAirport)
 
         fcuSink.send(value: ())
     }
@@ -70,14 +70,13 @@ class ReactiveDemoKitTests: XCTestCase {
         let testAirport = FlightComputer.Airport(name: testName,
                                                  coordinate: CLLocationCoordinate2DMake(29.95, -96),
                                                  metar: testMetar)
-        Current = with(Current,
-                       mut(\.flightComputer,
-                           FlightComputer(currentLocation: testLoc,
-                                          nearestAirportUpdated: testDate,
-                                          nearestAirport: testAirport)))
+        
+        Current.flightComputer = FlightComputer(currentLocation: testLoc,
+                                                nearestAirportUpdated: testDate,
+                                                nearestAirport: testAirport)
 
         let vc = ViewController()
-        //record = true
+//        record = true
         assertSnapshot(matching: vc, as: .image(on: .iPhoneX))
         
         #if targetEnvironment(simulator)
